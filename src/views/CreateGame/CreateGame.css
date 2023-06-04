@@ -1,0 +1,235 @@
+
+
+.createGame-page {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-image: url("../../../public/ai-videogames-pic/photo13.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+:disabled{
+  color: #a0a0a0;
+  border: #a0a0a0;
+  cursor: alias;
+}
+form input {
+  border: none;
+  outline: none;
+  background-color: #1a1a1a;
+  color: black;
+  background: inherit;
+  color: white;
+}
+
+.form-section-box {
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+.form-section-img {
+  height: 600px;
+  height: 700px;
+  width: 550px;
+}
+
+.img-left {
+  height: 550px;
+}
+
+.img-left-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+}
+.img-left-section h1{
+  font-size: 40px;
+  line-break: loose;
+}
+.main-form {
+  backdrop-filter: blur(5px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  height: 740px;
+  width: 550px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1em;
+  box-shadow: 6px 2px 15px 5px rgba(1, 57, 57, 1.7);
+  overflow-y: scroll;
+}
+
+.box1 {
+  background-color: #1c1d1e;
+  padding: 10px;
+}
+
+.input-field {
+
+  background-color: inherit;
+  border-bottom: rgb(203, 203, 203) solid;
+}
+
+.input-field-box {
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-field {
+  border: solid;
+  border: solid #4c4d4f;
+  width: 100px;
+  outline: none;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 3px;
+  background: rgb(235, 228, 228);
+  color: black;
+}
+
+.genres-field {
+  outline: none;
+  border-radius: 5px;
+  background: rgb(235, 228, 228);
+}
+
+.date-field {
+  border: solid #4c4d4f;
+  outline: none;
+  border-radius: 5px;
+  background: rgb(235, 228, 228);
+  color: black;
+}
+
+.textarea {
+  background: black;
+  outline: none;
+  color: white;
+}
+
+.form-control {
+  background: var(--yellow);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  display: flex;
+  align-items: center;
+  color: black;
+  color: white;
+
+}
+
+.form-control:focus {
+  border: 0px;
+  background-color: transparent;
+  border: none;
+}
+
+.textarea-box {
+  height: 30px;
+  padding-bottom: 5px;
+  width: 490px;
+  color: black;
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+
+.error-form {
+  color: red;
+  font-size: 15px;
+  border: none;
+  font-weight: bold;
+}
+
+.input-error-box {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.comenzar-btn:after {
+ 
+  transition: all 0.4s ease;
+
+}
+
+.comenzar-btn {
+  border: solid white;
+  padding: 12px 50px;
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  transition: 0.6s;
+  text-align: center;
+  margin: 0 auto;
+  width: 300px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border-color: #6c6f6d;
+  background: black;
+  z-index: 1;
+
+}
+
+.comenzar-btn:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.select-list {
+  width:
+    100%;
+  color: black;
+  color: white;
+  font: bold;
+}
+
+.contenedor-img {
+  position: relative;
+  border: none;
+}
+
+.img-fondo {
+  border-radius: 21px;
+  display: block;
+  width: 100%;
+}
+
+.form-texto {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+}
+
+::placeholder {
+  color: rgb(215, 215, 228);
+  font-weight: bold;
+  font-size: 14px;
+}
