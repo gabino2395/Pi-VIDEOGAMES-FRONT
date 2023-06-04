@@ -1,0 +1,63 @@
+.login-main {
+  height: 600px;
+  width: 600px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-main input {
+  color: black;
+}
+
+.form-login {
+  background: rgb(252, 250, 247);
+  width: 300px;
+  height: 00px;
+  border-radius: 12px;
+  height: 540px;
+  width: 450px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1em;
+  overflow-y: scroll;
+
+}
+
+.first-page-main {
+
+  background-image: url('/ai-videogames-pic/photo6.png');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-box-login {
+  display: flex;
+  background: inherit;
+  justify-content: space-around;
+  border: none;
+}
+
+.sign-up {
+  background: inherit;
+  background: white;
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+}
+
+.sign-up:hover {
+  cursor: pointer;
+}
+
+.details-password {
+  font-size: 10px;
+}
