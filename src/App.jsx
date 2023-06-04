@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+//hooks
+import { useEffect, useState } from "react";
+//router
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+//redux
+import { cleanGames } from "./redux/actions";
+import { useDispatch } from "react-redux";
+//
+import axios from "axios";
+//components
+import Detail from "./components/Detail/Detail";
+import CreateGame from "./views/CreateGame/CreateGame";
+import Nav from "./components/Nav/Nav";
+import HeroSection from "./views/landing/HeroSection";
+import Pong from "./components/Pong/Pong";
+import EditGame from "./views/EditGame/EditGame";
+import Landing from "./views/landing/Landing";
+import LandingPage from "./views/landing/LandingPage";
+import { URL } from "./Utils/Utils";
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const shownav = location.pathname !== "/";
+  const [access, setAccess] = useState(false);
+  const [response, setResponse] = useState("");
 
+  const login = async (userData) => {
+    try {
+      const { data } = await axios.post(`${URL}/user/login`, userData);
+      const access = data.access;
+      setAccess(access);
+      access && navigate("/heroSection");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const logOut = () => {
+    dispatch(cleanGames());
+    setAccess(false);
+  };
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access, navigate]);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {shownav && <Nav logOut={logOut} />}
+      {/* <Nav logOut={logOut} /> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Landing
+              login={login}
+              response={response}
+              setResponse={setResponse}
+            />
+          }
+        />
+
+        <Route path="/heroSection" element={<HeroSection />} />
+        <Route path="/home" element={<LandingPage />} />
+        {/* <Route path="/pong" element={<Pong />} /> */}
+
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/createGame" element={<CreateGame />} />
+        <Route path="/editGame/:id" element={<EditGame />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
